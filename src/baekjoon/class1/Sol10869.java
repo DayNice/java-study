@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 
 public class Sol10869 {
     public static void main(String[] args) throws IOException {
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        String[] words = bf.readLine().split("\\s+");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] words = br.readLine().split("\\s+");
         int a = Integer.parseInt(words[0]);
         int b = Integer.parseInt(words[1]);
         System.out.println(a + b);
