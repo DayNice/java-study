@@ -3,15 +3,15 @@ package baekjoon.class2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Sol11723 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int m = Integer.parseInt(br.readLine());
-        Set<Integer> set = new HashSet<>();
+        boolean[] contains = new boolean[21];
+        Arrays.fill(contains, false);
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < m; i++) {
@@ -21,30 +21,32 @@ public class Sol11723 {
             if (st.hasMoreTokens()) {
                 x = Integer.parseInt(st.nextToken());
             }
-            switch (w)  {
+
+            switch (w) {
                 case "add":
-                    set.add(x);
+                    contains[x] = true;
                     break;
                 case "remove":
-                    set.remove(x);
+                    contains[x] = false;
                     break;
                 case "check":
-                    if (set.contains(x)) {
-                        sb.append(1).append("\n");
+                    if (contains[x]) {
+                        sb.append("1\n");
                     } else {
-                        sb.append(0).append("\n");
+                        sb.append("0\n");
                     }
                     break;
                 case "toggle":
-                    if (!set.add(x)) {
-                        set.remove(x);
-                    }
+                    contains[x] = !contains[x];
                     break;
                 case "all":
+                    Arrays.fill(contains, true);
                     break;
                 case "empty":
+                    Arrays.fill(contains, false);
                     break;
             }
         }
+        System.out.println(sb);
     }
 }
