@@ -26,7 +26,7 @@ public class Sol4153 {
         System.out.println(sb);
     }
 
-    public static int[] getNums(String line) {
+    private static int[] getNums(String line) {
         StringTokenizer st = new StringTokenizer(line);
         int length = st.countTokens();
         int[] nums = new int[length];

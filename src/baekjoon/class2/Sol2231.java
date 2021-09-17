@@ -20,7 +20,7 @@ public class Sol2231 {
         System.out.println(out);
     }
 
-    public static int digitSum(int i) {
+    private static int digitSum(int i) {
         int out = i;
         while (i > 0) {
             out += i % 10;
