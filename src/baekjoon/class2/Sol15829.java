@@ -11,14 +11,12 @@ public class Sol15829 {
         String w = br.readLine();
 
         long out = 0;
+        long r = 1;
         for (int i = 0; i < l; i++) {
-            long x = 1;
-            for (int j = 0; j < i; j++) {
-                x *= 31;
-                x %= 1234567891;
-            }
-            out += (w.charAt(i) - 96) * x;
+            out += (w.charAt(i) - 96) * r;
             out %= 1234567891;
+            r *= 31;
+            r %= 1234567891;
         }
 
         System.out.println(out);
