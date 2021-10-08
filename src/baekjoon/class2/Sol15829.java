@@ -21,4 +21,19 @@ public class Sol15829 {
 
         System.out.println(out);
     }
+
+    public static void main_alt(String[] args) throws IOException {
+        // Horner's method
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int l = Integer.parseInt(br.readLine());
+        String w = br.readLine();
+
+        long out = 0;
+        for (int i = l - 1; i >= 0; i--) {
+            out = (w.charAt(i) - 96) + out * 31;
+            out %= 1234567891;
+        }
+
+        System.out.println(out);
+    }
 }
